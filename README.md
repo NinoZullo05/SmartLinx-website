@@ -28,7 +28,7 @@ Se vuoi contribuire a questo progetto, segui questi passaggi:
 5. Invia una pull request
 
 ## Contatti
-Per qualsiasi domanda o suggerimento, contattaci via email all'indirizzo [email@example.com](mailto:email@example.com).
+Per qualsiasi domanda o suggerimento, contattaci via email all'indirizzo [email@example.com](mailto:support@smartlinx.it).
 
 ## Licenza
 Questo progetto è distribuito con la licenza MIT. Per ulteriori informazioni, consulta il file `LICENSE`.
