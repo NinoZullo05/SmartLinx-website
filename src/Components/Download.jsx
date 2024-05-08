@@ -1,25 +1,40 @@
-import React from 'react';
-import DownloadImage from '../images/Download.png';
-import ParallaxTilt from 'react-parallax-tilt';
-import '../stili/FontStyle.css';
+import React from "react";
+import DownloadImage from "../images/Download.png";
+import ParallaxTilt from "react-parallax-tilt";
+import "../stili/FontStyle.css";
 
 const Download = () => (
-  <div className='mb-32 mt-10 flex justify-center items-center dark:bg-dark_background bg-light_background' id="download">
-    <div className='w-auto mx-auto text-center flex flex-col md:flex-row mt-20'>
-      <div className='md:w-1/2 md:pr-4 md:pl-8 ml-3 mr-3 flex justify-center items-center'>
+  <div
+    className="mb-32 mt-10 flex justify-center items-center bg-inherit"
+    id="download"
+  >
+    <div className="w-auto mx-auto text-center flex flex-col md:flex-row mt-20">
+      <div className="md:w-1/2 md:pr-4 md:pl-8 ml-3 mr-3 flex justify-center items-center">
         <div>
-          <h1 className="text-4xl font-bold dark:text-onSurfaceVariant text-light_primary mb-5">
-            <span className="font-SFProDisplayBlackItalic text-4xl text-gray-700">Scarica l’applicazione ufficiale di </span>
-            <span className='font-bold text-3xl dark:dark_primary text-light_primary' >Smart</span>
-            <span className='font-bold text-3xl dark:text-dark_primary text-[#998EFE]'>Linx</span>
+          <h1 className="text-4xl font-bold dark:text-onSurfaceVariant text-[#998EFE] mb-5">
+            <span className="font-SFProDisplayBlackItalic text-4xl text-gray-700 dark:text-gray-100">
+              Scarica l&apos;applicazione ufficiale di{" "}
+            </span>
+            <span className="font-bold text-3xl text-black dark:text-white">
+              Smart
+            </span>
+            <span className="font-bold text-3xl">Linx</span>
           </h1>
-          <p className='text-lg mb-5 text-light_secondary dark:text-dark_secondary'>Clicca qui per scaricare l'APK ufficiale:</p>
-          <button className="bg-light_primary text-white px-4 py-2 rounded-lg hover:bg-light_secondary focus:outline-none focus:bg-light_secondary mb-4">Scarica APK</button>
+          <p className="text-lg mb-5 text-gray-700 dark:text-gray-300">
+            Clicca qui per scaricare l'APK ufficiale:
+          </p>
+          <button className="text-white px-4 py-2 rounded-lg bg-[#998EFE] hover:bg-[#998EFE]/60 focus:outline-none focus:bg-[#998EFE]/50 mb-4">
+            Scarica APK
+          </button>
         </div>
       </div>
-      <div className='md:w-1/2 md:pl-8 mt-5 mr-3 ml-3 flex justify-center items-center'>
+      <div className="md:w-1/2 md:pl-8 mt-5 mr-3 ml-3 flex justify-center items-center">
         <ParallaxTilt>
-          <img src={DownloadImage} alt="Download" className='max-w-[250px] md:max-w-[450px] mx-auto' />
+          <img
+            src={DownloadImage}
+            alt="Download"
+            className="max-w-[250px] md:max-w-[450px] mx-auto"
+          />
         </ParallaxTilt>
       </div>
     </div>
