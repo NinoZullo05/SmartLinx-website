@@ -11,7 +11,7 @@ import Footer from './Components/Footer';
 
 function App () {
   return (
-    <div>
+    <div className="bg-white dark:bg-gray-900">
       <NavBar />
       <Home />
       <Servizi />
@@ -20,7 +20,6 @@ function App () {
       <FAQ />
       <FAQGrid />
       <Footer />
-
     </div>
   );
 }
