@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import NavBar from './Components/NavBar';
-import Home from './Components/Home';
-import Servizi from './Components/Servizi';
-import Feature from './Components/Feature';
-import Download from './Components/Download';
-import FAQ from './Components/FAQ';
-import FAQGrid from './Components/FAQGrid';
-import Footer from './Components/Footer';
+import NavBar from "./Components/NavBar";
+import Home from "./Components/Home";
+import Servizi from "./Components/Servizi";
+import Feature from "./Components/Feature";
+import Download from "./Components/Download";
+import FAQ from "./Components/FAQ";
+import FAQGrid from "./Components/FAQGrid";
+import Footer from "./Components/Footer";
 
-function App () {
+function App() {
   return (
     <div className="bg-white dark:bg-gray-900">
       <NavBar />

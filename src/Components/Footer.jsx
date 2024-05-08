@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SlArrowRight, SlArrowDown } from "react-icons/sl";
 import { FaRegCopyright, FaGithub } from "react-icons/fa";
+import axios from "axios";
 
 function Footer() {
     const [showDetails, setShowDetails] = useState({
@@ -50,6 +51,17 @@ function Footer() {
             </div>
         ));
     };
+
+    const Http = new XMLHttpRequest();
+    const url = 'http://smartlinx.it:5055/smartlinx/apiStatus'; // con http : ERR_CERT_AUTHORITY_INVALID , con HTTP : 
+    Http.open("GET", url);
+    Http.send();
+
+    Http.onreadystatechange = (e) => {
+        console.log(Http.responseText);
+    }
+
+
 
     return (
         <footer className="bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
