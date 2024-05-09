@@ -53,7 +53,7 @@ function Footer() {
     };
 
     const Http = new XMLHttpRequest();
-    const url = 'http://smartlinx.it:5055/smartlinx/apiStatus'; // con http : ERR_CERT_AUTHORITY_INVALID , con HTTP : 
+    const url = 'http://smartlinx.it:5055/smartlinx/apiStatus'; // con HTTPS : ERR_CERT_AUTHORITY_INVALID , con HTTP : ERR_EMPTY_RESPONSE
     Http.open("GET", url);
     Http.send();
 
