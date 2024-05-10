@@ -44,11 +44,11 @@ module.exports = {
         //  NUOVI COLORI DA IMPLEMENTARE :
         // Colori per lo sfondo
         bg_light: '#FFFFFF', // Bianco
-        bg_dark: '#292929', // Colore sfondo Grigio Scuro
+        bg_dark: '#111827', // Colore sfondo Grigio Scuro tendente al blu
 
         // Colori per il testo
-        text_light: '#000000', // Nero
-        text_dark: '#FFFFFF', // Bianco
+        text_light: '#000000', // Nero ,
+        text_dark: '#898f80', // Bianco , DA RENDERE PIù GRIGINO
 
         // Colori per scritta viola
         text_primary_light: '#998EFE',
@@ -73,6 +73,14 @@ module.exports = {
         //Colori Sfondo footer
         bg_footer_light: '#FFFFFF',
         bg_footer_dark: '#191a1c',
+
+        //Colori per il titolo FAQ
+        text_FAQ_title_light: '#191970',
+        text_FAQ_title_dark: '#f3f4f6',
+
+        //Colori per il background di FAQ
+        bg_FAQ_light: '#9E5CF6',
+        bg_FAQ_dark: '#2e2550',
       },
     },
   },

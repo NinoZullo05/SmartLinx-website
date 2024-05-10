@@ -8,61 +8,62 @@ import {
   FaWifi,
 } from "react-icons/fa";
 
-function FAQGrid() {
-  const domande = [
+/**
+ * A functional component that renders a grid of frequently asked questions.
+ * @returns {JSX.Element} - The JSX element representing the FAQ grid.
+ */
+export default function FAQGrid() {
+  const questions = [
     {
-      titolo: "Quali dispositivi Zigbee sono compatibili con l'app?",
-      testo:
-        "L'app SmartLinx è progettata per essere compatibile con una vasta gamma di dispositivi smart che utilizzano il protocollo Zigbee. Questo include lampadine smart, termostati, sensori di movimento, prese intelligenti e molto altro ancora. Per una lista completa dei dispositivi compatibili, ti invitiamo a consultare la lista completa.",
-      icona: FaWifi,
+      title: "Which Zigbee devices are compatible with the app?",
+      text:
+        "The SmartLinx app is designed to be compatible with a wide range of smart devices that use the Zigbee protocol. This includes smart light bulbs, thermostats, motion sensors, smart plugs, and more. For a complete list of compatible devices, please refer to the official documentation.",
+      icon: FaWifi,
     },
     {
-      titolo:
-        "Come posso installare e configurare l'app sul mio dispositivo mobile?",
-      testo:
-        "L'installazione e la configurazione dell'app SmartLinx sono semplici e intuitive. Puoi scaricare l'app gratuitamente dal Google Play Store (per dispositivi Android), dall'App Store (per dispositivi iOS) o dal seguente link . Una volta scaricata, segui le istruzioni visualizzate sullo schermo per completare il processo di installazione e configurazione.",
-      icona: FaDownload,
+      title: "How can I install and configure the app on my mobile device?",
+      text:
+        "Installing and configuring the SmartLinx app is simple and intuitive. You can download the app for free from the Google Play Store (for Android devices), the App Store (for iOS devices), or from the provided link. Once downloaded, follow the on-screen instructions to complete the installation and configuration process.",
+      icon: FaDownload,
     },
     {
-      titolo:
-        "Quali misure di sicurezza sono in atto per proteggere i miei dati personali?",
-      testo:
-        "La sicurezza dei dati dei nostri utenti è una priorità assoluta per noi. L'app SmartLinx utilizza protocolli di crittografia avanzati per proteggere tutte le comunicazioni tra l'app e l'hub Zigbee. Inoltre, rispettiamo rigorosamente le normative sulla privacy e non condividiamo mai le informazioni personali dei nostri utenti con terze parti senza il loro consenso.",
-      icona: FaLock,
+      title: "What security measures are in place to protect my personal data?",
+      text:
+        "The security of your data is a top priority for us. The SmartLinx app uses advanced encryption protocols to protect all communications between the app and the Zigbee hub. Additionally, we strictly adhere to privacy regulations and do not share any personal data with third-party entities without your consent.",
+      icon: FaLock,
     },
     {
-      titolo:
-        "Offrite assistenza tecnica per l'installazione e l'utilizzo dell'app?",
-      testo:
-        "Sì, il nostro team di assistenza tecnica è disponibile per fornire supporto e assistenza in caso di domande o problemi relativi all'installazione e all'utilizzo dell'app SmartLinx. Puoi contattare il nostro team tramite email, telefono o attraverso il nostro sito web e saremo lieti di aiutarti.",
-      icona: FaWrench,
+      title: "Do you offer technical support for the installation and usage of the app?",
+      text:
+        "Yes, our technical support team is available to provide assistance and support in case of questions or issues related to the installation and usage of the SmartLinx app. You can contact our team via email, phone, or through our website, and we will be happy to help you.",
+      icon: FaWrench,
     },
     {
-      titolo: "Quali sono i requisiti di sistema minimi per utilizzare l'app?",
-      testo:
-        "L'app SmartLinx è progettata per funzionare su una vasta gamma di dispositivi mobili, inclusi smartphone e tablet. I requisiti di sistema minimi dipendono dal sistema operativo del dispositivo, ma in generale è consigliabile utilizzare dispositivi con versioni aggiornate di Android o iOS per garantire un'esperienza ottimale.",
-      icona: FaAndroid,
+      title: "What are the minimum system requirements to use the app?",
+      text:
+        "The SmartLinx app is designed to work on a variety of mobile devices, including smartphones and tablets. The minimum system requirements depend on the device's operating system, but generally, it is recommended to use devices with updated versions of Android or iOS for optimal performance.",
+      icon: FaAndroid,
     },
     {
-      titolo: "Posso controllare i dispositivi Zigbee quando sono fuori casa?",
-      testo:
-        "Sì, con l'app SmartLinx puoi controllare i tuoi dispositivi Zigbee da qualsiasi luogo, purché tu abbia accesso a una connessione Internet. Che tu sia al lavoro, in vacanza o semplicemente fuori casa, puoi accedere all'app e gestire i tuoi dispositivi in modo remoto con facilità e convenienza.",
-      icona: FaUserAlt,
+      title: "Can I control my Zigbee devices when I'm away from home?",
+      text:
+        "Yes, with the SmartLinx app, you can control your Zigbee devices from anywhere, as long as you have access to an internet connection. Whether you're at work, on vacation, or just outside your home, you can access the app and manage your devices remotely with ease and convenience.",
+      icon: FaUserAlt,
     },
   ];
 
   return (
     <div className="mx-4 lg:mx-16 xl:mx-16 mt-5 mb-10 py-7 rounded-lg ">
-      <h2 className="text-2xl font-semibold text-blue-500 flex justify-center mb-6">
-        Domande frequenti
+      <h2 className="text-2xl font-semibold text-text_FAQ_title_light dark:text-text_FAQ_title_dark flex justify-center mb-6">
+        Frequently Asked Questions
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {domande.map((domanda, index) => (
-          <ElementoGriglia
+        {questions.map((question, index) => (
+          <QuestionCard
             key={index}
-            titolo={domanda.titolo}
-            testo={domanda.testo}
-            icona={domanda.icona}
+            title={question.title}
+            text={question.text}
+            icon={question.icon}
           />
         ))}
       </div>
@@ -70,22 +71,29 @@ function FAQGrid() {
   );
 }
 
-function ElementoGriglia({ titolo, testo, icona }) {
-  const Icona = icona;
+/**
+ * A functional component that renders a single question card.
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} props.title - The title of the question.
+ * @param {string} props.text - The text of the question.
+ * @param {React.ComponentType} props.icon - The icon component to display.
+ * @returns {JSX.Element} - The JSX element representing the question card.
+ */
+function QuestionCard({ title, text, icon }) {
+  const IconComponent = icon;
 
   return (
     <div className="p-6 flex items-start">
       <div className="rounded-full flex items-center justify-center mr-4">
-        <Icona className="text-gray-400 text-3xl" />
+        <IconComponent className="text-gray-400 text-3xl" />
       </div>
       <div>
-        <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">
-          {titolo}
+        <h3 className="text-lg font-semibold mb-2 text-text_bold_light dark:text-text_bold_dark">
+          {title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300">{testo}</p>
+        <p className="text-text_light dark:text-text_dark">{text}</p>
       </div>
     </div>
   );
 }
 
-export default FAQGrid;
