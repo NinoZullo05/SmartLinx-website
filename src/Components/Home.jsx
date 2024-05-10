@@ -24,7 +24,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="mb-32 mt-10 flex justify-center items-center" id="home">
+    <div className="pb-36 pt-20 flex justify-center items-center" id="home">
       <div className="w-auto mx-auto text-center flex flex-col md:flex-row mt-20">
         <div className="md:w-1/2 md:pr-4 md:pl-8 ml-5 mr-3">
           <img

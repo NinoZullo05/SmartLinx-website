@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { SlArrowRight, SlArrowDown } from "react-icons/sl";
 import { FaRegCopyright, FaGithub } from "react-icons/fa";
-import axios from "axios";
 
 function Footer() {
     const [showDetails, setShowDetails] = useState({
@@ -69,7 +68,7 @@ function Footer() {
                 <div className="mr-12 hidden lg:block">
                     <span>Resta connesso con noi sui social network:</span>
                 </div>
-                <button className="mr-6 text-neutral-600 dark:text-neutral-200">
+                <button className="mr-6 text-neutral-600 dark:text-neutral-200" onClick={() => window.open("https://github.com/AnesBarbati05/SmartLinx")}>
                     <FaGithub />
                 </button>
             </div>

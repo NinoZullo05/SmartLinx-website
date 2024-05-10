@@ -1,18 +1,17 @@
-import React from "react";
-import {
-  FaDownload,
-  FaLock,
-  FaWrench,
-  FaAndroid,
-  FaUserAlt,
-  FaWifi,
-} from "react-icons/fa";
+import React, { useEffect } from "react";
+import { FaDownload, FaLock, FaWrench, FaAndroid, FaUserAlt, FaWifi } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 /**
  * A functional component that renders a grid of frequently asked questions.
  * @returns {JSX.Element} - The JSX element representing the FAQ grid.
  */
 export default function FAQGrid() {
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   const questions = [
     {
       title: "Which Zigbee devices are compatible with the app?",
@@ -54,7 +53,7 @@ export default function FAQGrid() {
 
   return (
     <div className="mx-4 lg:mx-16 xl:mx-16 mt-5 mb-10 py-7 rounded-lg ">
-      <h2 className="text-2xl font-semibold text-text_FAQ_title_light dark:text-text_FAQ_title_dark flex justify-center mb-6">
+      <h2 className="text-2xl font-semibold text-text_FAQ_title_light dark:text-text_FAQ_title_dark flex justify-center mb-6" data-aos="fade-up">
         Frequently Asked Questions
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -83,7 +82,7 @@ function QuestionCard({ title, text, icon }) {
   const IconComponent = icon;
 
   return (
-    <div className="p-6 flex items-start">
+    <div className="p-6 flex items-start" data-aos="fade-up">
       <div className="rounded-full flex items-center justify-center mr-4">
         <IconComponent className="text-gray-400 text-3xl" />
       </div>
@@ -96,4 +95,3 @@ function QuestionCard({ title, text, icon }) {
     </div>
   );
 }
-

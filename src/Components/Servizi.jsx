@@ -1,62 +1,70 @@
-import React from "react";
+import { React, useEffect } from "react";
 import {
   AiOutlineDownload,
   AiOutlineSetting,
   AiOutlineReload,
 } from "react-icons/ai";
 import "../stili/FontStyle.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
+/**
+ * Service component for displaying the services provided by the application.
+ * @returns {JSX.Element} - The JSX element for the Service component.
+ */
 const Servizi = () => {
+  // Array containing service data
   const serviziData = [
     {
-      Icona: (
-        <AiOutlineDownload className="text-purple-500 w-16 h-14 relative" />
-      ),
-      Titolo: "Installazione e Configurazione Remota",
-      Descrizione:
-        "Offriamo un servizio completo di installazione e configurazione dell'app sul vostro dispositivo mobile. Il nostro team sarà disponibile per guidarvi attraverso il processo e assicurarsi che l'app sia integrata correttamente con l'hub Zigbee e i vostri dispositivi smart.",
+      Icon: <AiOutlineDownload className="text-purple-500 w-16 h-14 relative" />,
+      Title: "Remote Installation and Configuration",
+      Description:
+        "We offer a comprehensive service for installing and configuring the app on your mobile device. Our team will be available to guide you through the process and ensure that the app is properly integrated with the Zigbee hub and your smart devices.",
     },
     {
-      Icona: (
-        <AiOutlineSetting className="text-purple-500 w-16 h-14 relative" />
-      ),
-      Titolo: "Assistenza Tecnica Personalizzata",
-      Descrizione:
-        "Forniamo assistenza tecnica dedicata per risolvere eventuali problemi o domande riguardanti l'utilizzo dell'app. Il nostro team sarà disponibile per fornire supporto remoto e risolvere qualsiasi problema in modo tempestivo e professionale.",
+      Icon: <AiOutlineSetting className="text-purple-500 w-16 h-14 relative" />,
+      Title: "Personalized Technical Support",
+      Description:
+        "We provide dedicated technical support to address any issues or questions regarding the use of the app. Our team will be available to provide remote support and resolve any issues promptly and professionally.",
     },
     {
-      Icona: <AiOutlineReload className="text-purple-500 w-16 h-14 relative" />,
-      Titolo: "Aggiornamenti Continui e Miglioramenti",
-      Descrizione:
-        "Ci impegniamo a fornire aggiornamenti regolari dell'app per garantire che sia sempre aggiornata con le ultime funzionalità e miglioramenti. I nostri utenti avranno accesso a nuove funzionalità e miglioramenti dell'esperienza utente senza costi aggiuntivi.",
+      Icon: <AiOutlineReload className="text-purple-500 w-16 h-14 relative" />,
+      Title: "Continuous Updates and Improvements",
+      Description:
+        "We are committed to providing regular updates to the app to ensure that it is always up-to-date with the latest features and improvements. Our users will have access to new features and improvements to the user experience at no additional cost.",
     },
   ];
 
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <div>
-      <div className="text-center mb-6 mt-20" id="servizi">
-        <h1 className="text-4xl font-bold text-gray-700 dark:text-gray-100 mb-5">
-          Gestisci i tuoi dispositivi smart con un Click
+      <div className="text-center pb-10 pt-24" id="servizi">
+        <h1 className="text-4xl font-bold text-gray-700 dark:text-gray-100 mb-5" data-aos="zoom-in-down">
+          Manage Your Smart Devices with a Click
         </h1>
-        <h2 className="text-base font-medium text-gray-600 dark:text-gray-300">
-          I servizi che forniamo con la nostra applicazione
+        <h2 className="text-base font-medium text-gray-600 dark:text-gray-300" data-aos="zoom-in-down">
+          The services we provide with our application
         </h2>
       </div>
       <div className="flex flex-wrap justify-center items-center gap-8">
-        {serviziData.map((servizio, index) => (
+        {serviziData.map((service, index) => (
           <div
             key={index}
             className="w-80 h-auto px-8 py-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg border border-purple-500 flex flex-col justify-start items-center gap-2"
+            data-aos="zoom-in-down"
           >
             <div className="h-36 flex flex-col justify-start items-center gap-4">
-              {servizio.Icona}
+              {service.Icon}
               <h1 className="self-stretch text-center text-gray-700 dark:text-gray-200 text-xl font-bold font-'SF Pro Display Medium' leading-9">
-                {servizio.Titolo}
+                {service.Title}
               </h1>
             </div>
             <div className="justify-start items-start gap-2 inline-flex">
               <span className="w-64 text-left text-gray-600 dark:text-gray-300 text-sm font-normal font-'SF Pro Display Regular' leading-tight">
-                {servizio.Descrizione}
+                {service.Description}
               </span>
             </div>
           </div>

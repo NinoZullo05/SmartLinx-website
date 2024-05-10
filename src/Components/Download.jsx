@@ -1,6 +1,7 @@
-import React from "react";
+import { React, useEffect } from "react";
 import DownloadImage from "../images/Download.png";
 import ParallaxTilt from "react-parallax-tilt";
+import AOS from "aos";
 /**
  * Download component for the website.
  * Displays an image and a description with a download button.
@@ -9,6 +10,9 @@ import ParallaxTilt from "react-parallax-tilt";
  * @returns {React.FC} - A functional React component.
  */
 export default function Download() {
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
   return (
     <div
       className="mb-32 mt-10 flex justify-center items-center bg-inherit"
@@ -17,8 +21,8 @@ export default function Download() {
       <div className="w-auto mx-auto text-center flex flex-col md:flex-row mt-20">
         <div className="md:w-1/2 md:pr-4 md:pl-8 ml-3 mr-3 flex justify-center items-center">
           <div>
-            <h1 className="text-4xl font-bold  mb-5">
-              <span className="text-4xl text-text_bold_light dark:text-text_bold_dark">
+            <h1 className="text-4xl font-bold  mb-5" data-aos="zoom-in-down">
+              <span className="text-4xl text-text_bold_light dark:text-text_bold_dark " >
                 Download the official application of{" "}
               </span>
               <span className="font-bold text-3xl text-text_bold_light dark:text-text_bold_dark">
@@ -26,10 +30,11 @@ export default function Download() {
               </span>
               <span className="font-bold text-3xl dark:text-text_primary_dark text-text_primary_light">Linx</span>
             </h1>
-            <p className="text-lg mb-5 text-text_light dark:text-text_dark">
+            <p className="text-lg mb-5 text-text_light dark:text-text_dark" data-aos="zoom-in-up">
               Click here to download the official APK:
             </p>
-            <button className="text-text_light dark:text-text_bold_dark px-4 py-2 rounded-lg bg-button_light dark:bg-button_dark hover:bg-[#998EFE]/60 focus:outline-none focus:bg-[#998EFE]/50 mb-4">
+            <button className="text-text_light dark:text-text_bold_dark px-4 py-2 rounded-lg bg-button_light dark:bg-button_dark hover:bg-[#998EFE]/60 focus:outline-none focus:bg-[#998EFE]/50 mb-4"
+              data-aos="zoom-out-up">
               Download APK
             </button>
           </div>
@@ -40,6 +45,7 @@ export default function Download() {
               src={DownloadImage}
               alt="Download"
               className="max-w-[250px] md:max-w-[450px] mx-auto"
+              data-aos="zoom-in-left"
             />
           </ParallaxTilt>
         </div>

@@ -2,19 +2,34 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import Immagine from "../images/Logo.png";
 
+/**
+ * A functional component representing the navigation bar.
+ * @returns {JSX.Element} - The JSX for the navigation bar.
+ */
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Menu open state
+    const [activeSection, setActiveSection] = useState(null); // Active section
+
     const menuRef = useRef(null);
 
+    /**
+     * Toggles the menu open state.
+     */
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    /**
+     * Sets the active section based on the link clicked.
+     * @param {string} to - The section to set as active.
+     */
     const handleSetActive = (to) => {
         setActiveSection(to);
     };
 
+    /**
+     * Updates the menu's margin-bottom based on its open state.
+     */
     useEffect(() => {
         if (isMenuOpen) {
             const menuHeight = menuRef.current.offsetHeight;
@@ -24,6 +39,11 @@ const Navbar = () => {
         }
     }, [isMenuOpen]);
 
+    /**
+     * Capitalizes the first letter of a string.
+     * @param {string} string - The string to capitalize.
+     * @returns {string} - The capitalized string.
+     */
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     };
@@ -34,10 +54,10 @@ const Navbar = () => {
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src={Immagine} className="h-8" alt="SmartLinx Logo" />
                     <div className="flex-shrink-0">
-                        <span className="font-bold text-3xl text-black dark:text-white">
+                        <span className="font-bold text-2xl text-black dark:text-white">
                             Smart
                         </span>
-                        <span className="font-bold text-3xl text-[#9E5CF6]">Linx</span>
+                        <span className="font-bold text-2xl text-[#9E5CF6]">Linx</span>
                     </div>
                 </div>
                 <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -83,6 +103,8 @@ const Navbar = () => {
                                         className={`block py-2 px-3 text-gray-700 dark:text-gray-300 rounded md:p-0 md:text-[#9E5CF6] cursor-pointer ${activeSection === section ? "bg-[#9E5CF6]" : ""
                                             }`}
                                         onSetActive={handleSetActive}
+                                        onClick={toggleMenu} // Add this line
+
                                     >
                                         {capitalizeFirstLetter(section)}
                                     </Link>
