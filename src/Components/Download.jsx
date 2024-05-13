@@ -10,6 +10,11 @@ import AOS from "aos";
  * @returns {React.FC} - A functional React component.
  */
 export default function Download() {
+
+  const handleDownload = () => {
+    window.location.href = '/APKs/smartlinx.apk';
+  };
+
   useEffect(() => {
     AOS.init({ duration: 800 });
   }, []);
@@ -34,7 +39,8 @@ export default function Download() {
               Click here to download the official APK:
             </p>
             <button className="text-text_light dark:text-text_bold_dark px-4 py-2 rounded-lg bg-button_light dark:bg-button_dark hover:bg-[#998EFE]/60 focus:outline-none focus:bg-[#998EFE]/50 mb-4"
-              data-aos="zoom-out-up">
+              data-aos="zoom-out-up"
+              onClick={(handleDownload)}>
               Download APK
             </button>
           </div>

@@ -4,7 +4,6 @@ import {
   AiOutlineSetting,
   AiOutlineReload,
 } from "react-icons/ai";
-import "../stili/FontStyle.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -58,12 +57,12 @@ const Servizi = () => {
           >
             <div className="h-36 flex flex-col justify-start items-center gap-4">
               {service.Icon}
-              <h1 className="self-stretch text-center text-gray-700 dark:text-gray-200 text-xl font-bold font-'SF Pro Display Medium' leading-9">
+              <h1 className="self-stretch text-center text-gray-700 dark:text-gray-200 text-xl font-bold leading-9">
                 {service.Title}
               </h1>
             </div>
             <div className="justify-start items-start gap-2 inline-flex">
-              <span className="w-64 text-left text-gray-600 dark:text-gray-300 text-sm font-normal font-'SF Pro Display Regular' leading-tight">
+              <span className="w-64 text-left text-gray-600 dark:text-gray-300 text-sm font-normal leading-tight">
                 {service.Description}
               </span>
             </div>

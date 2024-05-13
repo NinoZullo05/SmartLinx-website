@@ -2,7 +2,7 @@ import React from 'react';
 
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
-import Servizi from './Components/Servizi';
+import Services from './Components/Services';
 import Feature from './Components/Feature';
 import Download from './Components/Download';
 import FAQ from './Components/FAQ';
@@ -15,7 +15,7 @@ function App () {
       <NavBar />
       <Home />
 
-      <Servizi />
+      <Services />
 
       <Feature />
 
