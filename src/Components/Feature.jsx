@@ -23,8 +23,8 @@ export default function Feature() {
   ];
 
   return (
-    <>
-      <div className="text-center pb-8 pt-20 " id="feature">
+    <div className="overflow-hidden">
+      <div className="text-center pb-8 pt-20" id="feature">
         <h1 className="text-4xl font-bold text-text_bold_light dark:text-text_bold_dark mb-5" data-aos="zoom-in-down">
           <Link to="feature" smooth={true} duration={500}>
             Discover our main features
@@ -38,7 +38,7 @@ export default function Feature() {
         {featureItems.map((feature, index) => (
           <div
             key={index}
-            className="w-96 h-80 flex-col justify-start items-center inline-flex" data-aos="zoom-out-up">
+            className="w-96 h-80 flex-col container justify-start items-center inline-flex" data-aos="zoom-out-up">
             <img
               className="w-auto h-48"
               src={feature.imageSrc}
@@ -51,7 +51,7 @@ export default function Feature() {
             </div>
           </div>
         ))}
-      </div >
-    </>
+      </div>
+    </div>
   );
 };

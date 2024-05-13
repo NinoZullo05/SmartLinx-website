@@ -1,5 +1,9 @@
-import React from 'react';
-
+/**
+ * A React functional component that renders a video element.
+ *
+ * @function Video
+ * @returns {JSX.Element} - A JSX element representing the video component.
+ */
 export default function Video() {
     return (
         <div className="flex justify-center mx-12">
@@ -10,4 +14,3 @@ export default function Video() {
         </div>
     );
 };
-

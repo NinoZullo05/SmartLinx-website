@@ -10,6 +10,7 @@ function Footer() {
         Nino: false,
     });
 
+
     const users = [
         { name: "Anes Barbati", email: "anes.barbati@smartlinx.it" },
         { name: "Edoardo Ingiardi", email: "edoardo.ingiardi@smartlinx.it" },
@@ -17,21 +18,32 @@ function Footer() {
         { name: "Nino Zullo", email: "nino.zullo@smartlinx.it" },
     ];
 
+    /**
+     * Toggles the visibility of a user's details.
+     * @param {string} name - The name of the user whose details are being toggled.
+     */
     const toggleDetails = (name) => {
         setShowDetails((prevState) => ({
             ...prevState,
             [name]: !prevState[name],
         }));
     };
-
+    /**
+         * Handles the download of the API documentation.
+         */
     const handleDownload = () => {
-        window.location.href = "/Documentazione/SmartLinx_API Reference.pdf";
+        window.location.href = "/Documentation/SmartLinx_API Reference.pdf";
     };
-
-    const handleInfoProgetto = () => {
-        window.location.href = "/Documentazione/InformazioniProgetto.pdf";
+    /**
+         * Handles the navigation to the project information page.
+         */
+    const handleProjectInfo = () => {
+        window.location.href = "/Documentation/ProjectInformation.pdf";
     };
-
+    /**
+         * Renders the list of users with their corresponding emails.
+         * @returns {JSX.Element} - The rendered list of users.
+         */
     const renderUsers = () => {
         return users.map((user) => (
             <div className="mb-4" key={user.name}>
@@ -51,22 +63,11 @@ function Footer() {
         ));
     };
 
-    const Http = new XMLHttpRequest();
-    const url = 'http://smartlinx.it:5055/smartlinx/apiStatus'; // con HTTPS : ERR_CERT_AUTHORITY_INVALID , con HTTP : ERR_EMPTY_RESPONSE
-    Http.open("GET", url);
-    Http.send();
-
-    Http.onreadystatechange = (e) => {
-        console.log(Http.responseText);
-    }
-
-
-
     return (
         <footer className="bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
             <div className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
                 <div className="mr-12 hidden lg:block">
-                    <span>Resta connesso con noi sui social network:</span>
+                    <span>Stay connected with us on social networks:</span>
                 </div>
                 <button className="mr-6 text-neutral-600 dark:text-neutral-200" onClick={() => window.open("https://github.com/AnesBarbati05/SmartLinx")}>
                     <FaGithub />
@@ -78,41 +79,39 @@ function Footer() {
                     <div className="">
                         <h6 className="mb-4 flex items-center justify-center font-semibold md:justify-start">
                             <FaRegCopyright className="mr-2" />
-                            <div className="flex-shrink-0">
+                            <div className="flex-shrink-0" translate="no">
                                 <span className="font-bold text-2xl text-black">Smart</span>
                                 <span className="font-bold text-2xl text-[#9E5CF6]">Linx</span>
                             </div>
                         </h6>
                         <p>
-                            Tutti i diritti riservati. Realizzato come progetto di quinta
-                            superiore dagli studenti della 5IC A.S. 2023/2024.
+                            All rights reserved. Developed as a high school project by students of class 5IC Year 2023/2024.
                             <br />
-                            Scopri di più su di noi e sul nostro progetto di innovazione
-                            tecnologica per la tua casa intelligente.{" "}
+                            Learn more about us and our technological innovation project for your smart home.{" "}
                         </p>
                     </div>
                     <div className="">
                         <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                            Chi Siamo?
+                            About Us
                         </h6>
 
                         {renderUsers()}
                     </div>
                     <div className="">
                         <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                            Link Utili
+                            Useful Links
                         </h6>
                         <p className="mb-4">
                             <button className="text-neutral-600 dark:text-neutral-200">
-                                Dati & Privacy
+                                Data & Privacy
                             </button>
                         </p>
                         <p className="mb-4">
                             <button
-                                onClick={handleInfoProgetto}
+                                onClick={handleProjectInfo}
                                 className="text-neutral-600 dark:text-neutral-200"
                             >
-                                Informazioni progetto
+                                Project Information
                             </button>
                         </p>
                         <p className="mb-4">
@@ -125,13 +124,13 @@ function Footer() {
                                 className="text-neutral-600 dark:text-neutral-200"
                                 onClick={handleDownload}
                             >
-                                Documentazione API
+                                API Documentation
                             </button>
                         </p>
                     </div>
                     <div>
                         <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                            Contatti
+                            Contact
                         </h6>
                         <p className="mb-4 flex items-center justify-center md:justify-start">
                             <svg
@@ -143,7 +142,7 @@ function Footer() {
                                 <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
                                 <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
                             </svg>
-                            Crema, CR 26013, IT
+                            Crema, CR 26013, Italy
                         </p>
                         <p className="mb-4 flex items-center justify-center md:justify-start">
                             <svg
@@ -155,7 +154,7 @@ function Footer() {
                                 <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                                 <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                             </svg>
-                            supporto@smartlinx.it
+                            support@smartlinx.it
                         </p>
 
                         <p className="flex items-center justify-center md:justify-start">
@@ -171,7 +170,7 @@ function Footer() {
                                     clipRule="evenodd"
                                 />
                             </svg>
-                            Crema, CR 26013, IT
+                            Crema, CR 26013, Italy
                         </p>
                     </div>
                 </div>

@@ -41,7 +41,7 @@ const Servizi = () => {
 
   return (
     <div>
-      <div className="text-center pb-10 pt-24" id="servizi">
+      <div className="text-center mb-10 mt-10" id="servizi">
         <h1 className="text-4xl font-bold text-gray-700 dark:text-gray-100 mb-5" data-aos="zoom-in-down">
           Manage Your Smart Devices with a Click
         </h1>

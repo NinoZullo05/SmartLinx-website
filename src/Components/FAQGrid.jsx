@@ -52,11 +52,11 @@ export default function FAQGrid() {
   ];
 
   return (
-    <div className="mx-4 lg:mx-16 xl:mx-16 mt-5 mb-10 py-7 rounded-lg ">
-      <h2 className="text-2xl font-semibold text-text_FAQ_title_light dark:text-text_FAQ_title_dark flex justify-center mb-6" data-aos="fade-up">
+    <div className=" md:max-w-full px-4 lg:px-16 xl:px-16 mt-5 mb-10 py-7 rounded-lg overflow-hidden">
+      <h2 className="text-2xl font-semibold text-text_FAQ_title_light dark:text-text_FAQ_title_dark flex justify-center mb-5" data-aos="zoom-out-up">
         Frequently Asked Questions
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
         {questions.map((question, index) => (
           <QuestionCard
             key={index}
@@ -69,7 +69,6 @@ export default function FAQGrid() {
     </div>
   );
 }
-
 /**
  * A functional component that renders a single question card.
  * @param {Object} props - The properties passed to the component.

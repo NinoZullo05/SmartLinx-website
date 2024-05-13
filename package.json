@@ -10,6 +10,8 @@
     "aos": "^2.3.4",
     "axios": "^1.6.8",
     "flowbite-react": "^0.9.0",
+    "https": "^1.0.0",
+    "https-agent": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
