@@ -39,7 +39,7 @@ Se vuoi contribuire a questo progetto, segui questi passaggi:
 
 ## Contatti
 
-Per qualsiasi domanda o suggerimento, contattaci via email all'indirizzo [email@example.com](mailto:support@smartlinx.it).
+Per qualsiasi domanda o suggerimento, contattaci via email all'indirizzo [support@smartlinx.it](mailto:support@smartlinx.it).
 
 ## Licenza
 
