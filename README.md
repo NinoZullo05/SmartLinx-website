@@ -17,15 +17,15 @@ Questo progetto è una web app che consente agli utenti di leggere informazioni 
 
 ## Installazione Locale
 
-1. Clona il repository: `git clone https://github.com/`
-2. Entra nella directory del progetto: `cd nomeprogetto`
+1. Clona il repository: `git clone https://github.com/NinoZullo05/SmartLinx-website.git`
+2. Entra nella directory del progetto: `cd SmartLinx-website`
 3. Installa le dipendenze: `npm install`
 4. Avvia l'applicazione: `npm start`
 5. Apri il browser e vai all'indirizzo `http://localhost:3000`
 
 ## Sito Web
 
-Il sito web è online all'indirizzo [smartlinx.it:3500](http://smartlinx.it:3500).
+Il sito web è online all'indirizzo [www.smartlinx.it](https://www.smartlinx.it).
 
 ## Contribuire
 
@@ -39,7 +39,7 @@ Se vuoi contribuire a questo progetto, segui questi passaggi:
 
 ## Contatti
 
-Per qualsiasi domanda o suggerimento, contattaci via email all'indirizzo [support@smartlinx.it](mailto:support@smartlinx.it).
+Per qualsiasi domanda o suggerimento, contattaci via email all'indirizzo [nino.zullo05dev@gmail.com](mailto:support@smartlinx.it).
 
 ## Licenza
 
