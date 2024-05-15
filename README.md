@@ -17,7 +17,7 @@ Questo progetto è una web app che consente agli utenti di leggere informazioni 
 
 ## Installazione Locale
 
-1. Clona il repository: `git clone https://github.com/tuonome/nomeprogetto.git`
+1. Clona il repository: `git clone https://github.com/`
 2. Entra nella directory del progetto: `cd nomeprogetto`
 3. Installa le dipendenze: `npm install`
 4. Avvia l'applicazione: `npm start`
