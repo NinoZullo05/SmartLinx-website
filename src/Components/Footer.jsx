@@ -32,13 +32,13 @@ function Footer() {
          * Handles the download of the API documentation.
          */
     const handleDownload = () => {
-        window.location.href = "/Documentation/SmartLinx_API Reference.pdf";
+        window.open("/public/Documentation/ProjectInfo.pdf", "_blank");
     };
     /**
          * Handles the navigation to the project information page.
          */
     const handleProjectInfo = () => {
-        window.location.href = "/Documentation/ProjectInformation.pdf";
+        window.open("/build/Documentation/ProjectInfo.pdf", "_blank");
     };
     /**
          * Renders the list of users with their corresponding emails.
@@ -107,12 +107,11 @@ function Footer() {
                             </button>
                         </p>
                         <p className="mb-4">
-                            <button
-                                onClick={handleProjectInfo}
+                            <a href="Documentation/ProjectInfo.pdf"
                                 className="text-neutral-600 dark:text-neutral-200"
                             >
                                 Project Information
-                            </button>
+                            </a>
                         </p>
                         <p className="mb-4">
                             <button className="text-neutral-600 dark:text-neutral-200">
@@ -120,12 +119,11 @@ function Footer() {
                             </button>
                         </p>
                         <p>
-                            <button
+                            <a href="Documentation/SmartLinx_API Reference.pdf"
                                 className="text-neutral-600 dark:text-neutral-200"
-                                onClick={handleDownload}
                             >
                                 API Documentation
-                            </button>
+                            </a>
                         </p>
                     </div>
                     <div>
