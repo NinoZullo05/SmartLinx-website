@@ -24,7 +24,7 @@ export default function Feature() {
 
   return (
     <div className="overflow-hidden">
-      <div className="text-center pb-8 pt-20" id="feature">
+      <div className="text-center pb-8 pt-20" id="features">
         <h1 className="text-4xl font-bold text-text_bold_light dark:text-text_bold_dark mb-5" data-aos="zoom-in-down">
           <Link to="feature" smooth={true} duration={500}>
             Discover our main features
