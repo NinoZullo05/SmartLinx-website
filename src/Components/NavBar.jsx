@@ -45,6 +45,9 @@ const Navbar = () => {
      * @returns {string} - The capitalized string.
      */
     const capitalizeFirstLetter = (string) => {
+       if (string === "faq") {
+            return "FAQs";
+        }
         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     };
 
