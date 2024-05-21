@@ -29,18 +29,6 @@ function Footer() {
         }));
     };
     /**
-         * Handles the download of the API documentation.
-         */
-    const handleDownload = () => {
-        window.open("/public/Documentation/ProjectInfo.pdf", "_blank");
-    };
-    /**
-         * Handles the navigation to the project information page.
-         */
-    const handleProjectInfo = () => {
-        window.open("/build/Documentation/ProjectInfo.pdf", "_blank");
-    };
-    /**
          * Renders the list of users with their corresponding emails.
          * @returns {JSX.Element} - The rendered list of users.
          */
@@ -69,7 +57,7 @@ function Footer() {
                 <div className="mr-12 hidden lg:block">
                     <span>Stay connected with us on social networks:</span>
                 </div>
-                <button className="mr-6 text-neutral-600 dark:text-neutral-200" onClick={() => window.open("https://github.com/AnesBarbati05/SmartLinx")}>
+                <button className="mr-6 text-neutral-600 dark:text-neutral-200" onClick={() => window.open("https://github.com/SmartLinx-Project")}>
                     <FaGithub />
                 </button>
             </div>
@@ -102,20 +90,26 @@ function Footer() {
                             Useful Links
                         </h6>
                         <p className="mb-4">
-                            <button className="text-neutral-600 dark:text-neutral-200">
-                                Data & Privacy
-                            </button>
+                            <a href="https://github.com/SmartLinx-Project" className="text-neutral-600 dark:text-neutral-200" target="_blank" // To open the repository in another page
+                            >
+                                Source Code
+
+                            </a>
                         </p>
                         <p className="mb-4">
                             <a href="Documentation/ProjectInfo.pdf"
                                 className="text-neutral-600 dark:text-neutral-200"
+
                             >
                                 Project Information
                             </a>
                         </p>
                         <p className="mb-4">
-                            <button className="text-neutral-600 dark:text-neutral-200">
-                                API Status ✔
+                            <button
+                                className="text-neutral-600 dark:text-neutral-200 hover:text-green-500"
+                                onMouseOver={(e) => e.currentTarget.textContent = 'Online'}
+                                onMouseOut={(e) => e.currentTarget.textContent = 'API Status'}>
+                                API Status
                             </button>
                         </p>
                         <p>
