@@ -12,7 +12,6 @@ import "aos/dist/aos.css";
  * @returns {JSX.Element} - The JSX element for the Service component.
  */
 const Servizi = () => {
-  // Array containing service data
   const serviziData = [
     {
       Icon: <AiOutlineDownload className="text-purple-500 w-16 h-14 relative" />,
@@ -40,7 +39,7 @@ const Servizi = () => {
 
   return (
     <div>
-      <div className="text-center mb-10 mt-10" id="services">
+      <div className="text-center pb-10 pt-20" id="services">
         <h1 className="text-4xl font-bold text-gray-700 dark:text-gray-100 mb-5" data-aos="zoom-in-down">
           Manage Your Smart Devices with a Click
         </h1>
@@ -52,7 +51,7 @@ const Servizi = () => {
         {serviziData.map((service, index) => (
           <div
             key={index}
-            className="w-80 h-auto px-8 py-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg border border-purple-500 flex flex-col justify-start items-center gap-2"
+            className="w-80 h-80 px-8 py-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg border border-purple-500 flex flex-col justify-start items-center gap-2"
             data-aos="zoom-in-down"
           >
             <div className="h-36 flex flex-col justify-start items-center gap-4">
