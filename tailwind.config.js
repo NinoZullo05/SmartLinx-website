@@ -22,26 +22,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        light_background: '#FFFFFF', // Bianco
-        light_primary: '#998EFE', //Colore Linx ( Viola)
-        light_secondary: '#DAD5FF', // Viola più chiaro
-        light_primaryContainer: '#F3F3F3', // Grigiolino leggero per contianer , NON UTILIZZATO!
-        light_secondaryContainer: '#000000', // NERO Completo
-        light_tertiary: '#E7F4FE', // Grigiolino più chiaro tendente al blu
-        light_onSurface: '#EFEFEF', // grigiolino
-        light_onSurfaceVariant: '#FFFFFF', // Grigio
-
-        dark_background: '#292929', // Colore sfondo Grigio Scuro
-
-        dark_primary: '#998EFE', //Colore Linx ( Viola), rimane inviariato
-        dark_secondary: '#DAD5FF', // Grigio più chiaro
-        dark_primaryContainer: '#1A1A1A', // nero più leggero
-        dark_secondaryContainer: '#FFFFFF',
-        dark_tertiary: '#20202E',
-        dark_onSurface: '#20202E',
-        dark_onSurfaceVariant: '#010101',
-
-        //  NUOVI COLORI DA IMPLEMENTARE :
+       
         // Colori per lo sfondo
         bg_light: '#FFFFFF', // Bianco
         bg_dark: '#111827', // Colore sfondo Grigio Scuro tendente al blu

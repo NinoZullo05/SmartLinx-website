@@ -16,7 +16,7 @@ export default function FAQ() {
   return (
     <>
       <div
-        className="bg-bg_FAQ_light dark:bg-bg_FAQ_dark mx-6 lg:mx-16 xl:mx-16 mt-5 mb-2 py-7 bg-opacity-20 rounded-lg text-left lg:px-6 xl:px-8 flex flex-col justify-start items-center gap-8 sm:mx-4"
+        className="bg-bg_FAQ_light dark:bg-bg_FAQ_dark mx-6 lg:mx-16 xl:mx-16 pt-5 mb-2 py-7 bg-opacity-20 rounded-lg text-left lg:px-6 xl:px-8 flex flex-col justify-start items-center gap-8 sm:mx-4"
         id="faq"
         data-aos="fade-up"
       >
