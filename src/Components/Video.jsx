@@ -6,14 +6,12 @@ import React, { useEffect, useState } from 'react';
  * @function Video
  * @returns {JSX.Element} - A JSX element representing the video component.
  */
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 
 export default function Video() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        AOS.init();
         if (window.location.hash === '#video') {
             const element = document.getElementById('video');
             if (element) {
@@ -27,7 +25,7 @@ export default function Video() {
     };
 
     return (
-        <div id="video" className="pt-16" data-aos="fade-up">
+        <div id="video" className="pt-16" >
             <div className="flex flex-col items-center mx-4 sm:mx-12">
                 <h1 className="text-gray-900 dark:text-gray-100 text-3xl font-bold mb-10 mt-5 mx-5 text-center truncate">
                     Video of our application
@@ -41,7 +39,6 @@ export default function Video() {
                     title="Video of our application"
                     onLoad={handleVideoLoad}
 
-                    data-aos="fade-up" // Applica animazione al caricamento
                 ></iframe>
             </div>
         </div>
