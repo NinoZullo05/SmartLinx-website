@@ -38,7 +38,7 @@ export default function Download() {
             <p className="text-lg mb-5 text-text_light dark:text-text_dark" data-aos="zoom-in-up">
               Click here to download the official APK:
             </p>
-            <button className="text-text_light dark:text-text_bold_dark px-4 py-2 rounded-lg bg-button_light dark:bg-button_dark hover:bg-[#998EFE]/60 focus:outline-none focus:bg-[#998EFE]/50 mb-4"
+            <button className="text-white dark:text-text_bold_dark px-4 py-2 rounded-lg bg-button_light dark:bg-button_dark hover:bg-[#998EFE]/60 focus:outline-none focus:bg-[#998EFE]/50 mb-4"
               data-aos="zoom-out-up"
               onClick={(handleDownload)}>
               Download APK

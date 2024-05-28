@@ -97,18 +97,17 @@ const Navbar = () => {
                     id="navbar-sticky"
                 >
                     <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
-                        {["home", "services", "features", "download", "faq"].map(
+                        {["home", "services", "video", "features", "download", "faq"].map(
                             (section) => (
                                 <li key={section}>
                                     <Link
                                         to={section}
                                         smooth={true}
                                         activeClass="active"
-                                        className={`block py-2 px-3 text-gray-700 dark:text-gray-300 rounded md:p-0 md:text-[#9E5CF6] cursor-pointer ${activeSection === section ? "bg-[#9E5CF6]" : ""
+                                        className={`block py-2 px-3 text-gray-700 dark:text-gray-300 rounded md:p-0 md:text-black cursor-pointer ${activeSection === section ? "bg-[#9E5CF6]" : ""
                                             }`}
                                         onSetActive={handleSetActive}
-                                        onClick={toggleMenu}
-                                    >
+                                        onClick={toggleMenu}>
                                         {capitalizeFirstLetter(section)}
                                     </Link>
                                 </li>
