@@ -103,7 +103,7 @@ function Footer() {
                             </a>
                         </p>
                         <p className="mb-4">
-                            <a href="https://stats.uptimerobot.com/cOQ8m3hFKF"
+                            <a href="https://stats.uptimerobot.com/gvx0JgSJRC"
                                 target="_blank" rel="noopener noreferrer"
                                 className="text-neutral-600 dark:text-neutral-200 hover:text-green-500">
                                 API Status
