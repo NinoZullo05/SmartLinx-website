@@ -7,7 +7,7 @@ import ErrorPage from './Pages/ErrorPage';
 
 function App () {
   return (
-    <div className="bg-bg_light dark:bg-bg_dark">
+    <div className="bg-bg_light dark:bg-bg_dark  custom - scrollbar">
 
       <BrowserRouter>
         <Routes>

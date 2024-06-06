@@ -21,8 +21,7 @@ export default function Download() {
   return (
     <div
       className="mb-32 mt-10 flex justify-center items-center bg-inherit"
-      id="download"
-    >
+      id="download" >
       <div className="w-auto mx-auto text-center flex flex-col md:flex-row mt-20">
         <div className="md:w-1/2 md:pr-4 md:pl-8 ml-3 mr-3 flex justify-center items-center">
           <div>
