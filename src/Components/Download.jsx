@@ -12,7 +12,7 @@ import AOS from "aos";
 export default function Download() {
 
   const handleDownload = () => {
-    window.location.href = '/APKs/smartlinx.apk';
+    window.location.href = '/APKs/SmartLinx v1.2.2.apk';
   };
 
   useEffect(() => {
