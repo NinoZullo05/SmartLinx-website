@@ -1,16 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'media',
   theme: {
     fontFamily: {
+      sans: ['SF Pro Display', 'Helvetica', 'Arial', 'sans-serif'],
       'f-pro-display-black-italic': [
         'SF Pro Display Black Italic',
-        'ans-serif',
+        'SF Pro Display',
+        'sans-serif',
       ],
-      'f-pro-display-bold': ['SF Pro Display Bold', 'ans-serif'],
+      'f-pro-display-bold': [
+        'SF Pro Display Bold',
+        'SF Pro Display',
+        'sans-serif',
+      ],
       'f-pro-display-heavy-italic': [
         'SF Pro Display Heavy Italic',
-        'ans-serif',
+        'SF Pro Display',
+        'sans-serif',
       ],
     },
     screens: {
@@ -22,7 +30,6 @@ module.exports = {
     },
     extend: {
       colors: {
-       
         // Colori per lo sfondo
         bg_light: '#FFFFFF', // Bianco
         bg_dark: '#111827', // Colore sfondo Grigio Scuro tendente al blu

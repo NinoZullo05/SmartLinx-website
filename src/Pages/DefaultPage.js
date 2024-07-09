@@ -9,12 +9,10 @@ import FAQ from '../Components/FAQ';
 import FAQGrid from '../Components/FAQGrid';
 import Footer from '../Components/Footer';
 import Video from '../Components/Video';
-import Carousel from '../Components/Carousel';
 export default function DefaultPage () {
   return (
     <div className="bg-bg_light dark:bg-bg_dark">
       <NavBar />
-      <Carousel />
       <Home />
       <Services />
       <Video />

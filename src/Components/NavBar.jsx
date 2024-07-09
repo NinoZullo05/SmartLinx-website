@@ -1,35 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import Image from "../images/Logo.png";
+import { navbarText } from "../static/StaticText";
 
-/**
- * A functional component representing the navigation bar.
- * @returns {JSX.Element} - The JSX for the navigation bar.
- */
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Stato per il menu aperto
-    const [activeSection, setActiveSection] = useState(null); // Sezione attiva
-
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState(null);
     const menuRef = useRef(null);
 
-    /**
-     * Toggles the menu open state.
-     */
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    /**
-     * Sets the active section based on the link clicked.
-     * @param {string} to - The section to set as active.
-     */
     const handleSetActive = (to) => {
         setActiveSection(to);
     };
 
-    /**
-     * Updates the menu's margin-bottom based on its open state.
-     */
     useEffect(() => {
         if (isMenuOpen) {
             const menuHeight = menuRef.current.offsetHeight;
@@ -39,16 +25,10 @@ const Navbar = () => {
         }
     }, [isMenuOpen]);
 
-    /**
-     * Capitalizes the first letter of a string.
-     * @param {string} string - The string to capitalize.
-     * @returns {string} - The capitalized string.
-     */
     const capitalizeFirstLetter = (string) => {
         if (string === "faq") {
             return "FAQs";
         }
-
         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     };
 
@@ -58,7 +38,7 @@ const Navbar = () => {
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src={Image} className="h-8" alt="SmartLinx Logo" />
                     <div className="flex-shrink-0" translate="no">
-                        <span className="font-bold text-2xl text-black dark:text-white" >
+                        <span className="font-bold text-2xl text-black dark:text-white">
                             Smart
                         </span>
                         <span className="font-bold text-2xl text-[#9E5CF6]" translate="no">Linx</span>
@@ -97,22 +77,20 @@ const Navbar = () => {
                     id="navbar-sticky"
                 >
                     <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
-                        {["home", "services", "video", "features", "download", "faq"].map(
-                            (section) => (
-                                <li key={section}>
-                                    <Link
-                                        to={section}
-                                        smooth={true}
-                                        activeClass="active"
-                                        className={`block py-2 px-3 text-gray-700 dark:text-gray-300 rounded md:p-0 md:text-black cursor-pointer ${activeSection === section ? "bg-[#9E5CF6]" : ""
-                                            }`}
-                                        onSetActive={handleSetActive}
-                                        onClick={toggleMenu}>
-                                        {capitalizeFirstLetter(section)}
-                                    </Link>
-                                </li>
-                            )
-                        )}
+                        {navbarText.map((section) => (
+                            <li key={section}>
+                                <Link
+                                    to={section}
+                                    smooth={true}
+                                    activeClass="active"
+                                    className={`block py-2 px-3 text-gray-700 dark:text-gray-300 rounded md:p-0 md:text-black cursor-pointer ${activeSection === section ? "bg-[#9E5CF6]" : ""
+                                        }`}
+                                    onSetActive={handleSetActive}
+                                    onClick={toggleMenu}>
+                                    {capitalizeFirstLetter(section)}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
