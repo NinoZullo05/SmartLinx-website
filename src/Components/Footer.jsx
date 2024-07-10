@@ -56,7 +56,7 @@ export default function Footer() {
                         <h6 className="mb-4 flex items-center justify-center font-semibold md:justify-start">
                             <FaRegCopyright className="mr-2" />
                             <div className="flex-shrink-0" translate="no">
-                                <span className="font-bold text-2xl text-black dark:text-white-">Smart</span>
+                                <span className="font-bold text-2xl text-black dark:text-white">Smart</span>
                                 <span className="font-bold text-2xl text-[#9E5CF6]">Linx</span>
                             </div>
                         </h6>
