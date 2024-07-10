@@ -1,11 +1,12 @@
-// src/components/Home.js
 import React, { useState, useEffect } from "react";
-import onBoarding1 from "../images/onBoarding1.png";
-import onBoarding2 from "../images/onBoarding2.png";
-import onBoarding3 from "../images/onBoarding3.png";
+import onBoarding1 from "../images/test1.png";
+import onBoarding2 from "../images/test2.png";
+import onBoarding3 from "../images/test3.png";
 import { carouselText } from "../static/StaticText";
+import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 
-const images = [onBoarding1, onBoarding2, onBoarding3];
+
+const images = [onBoarding2, onBoarding1, onBoarding3];
 
 export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -40,10 +41,12 @@ export default function Home() {
       id="home"
     >
       <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
-        <button onClick={prevSlide} className="text-3xl font-bold text-gray-700 dark:text-gray-300">&lt;</button>
+        <button onClick={prevSlide} className="text-3xl font-bold text-gray-700 dark:text-gray-300"><AiOutlineLeft />
+        </button>
       </div>
       <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
-        <button onClick={nextSlide} className="text-3xl font-bold text-gray-700 dark:text-gray-300">&gt;</button>
+        <button onClick={nextSlide} className="text-3xl font-bold text-gray-700 dark:text-gray-300"><AiOutlineRight />
+        </button>
       </div>
       <div className={`w-full md:w-auto mx-auto text-center flex flex-col md:flex-row mt-20 transition-opacity duration-300 ${fade ? 'opacity-100' : 'opacity-0'}`}>
         <div className="md:w-1/2 md:pr-4 md:pl-8 ml-5 mr-3">

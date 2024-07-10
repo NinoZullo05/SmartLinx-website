@@ -1,7 +1,7 @@
 import React from 'react';
 
 import NavBar from '../Components/NavBar';
-import Home from '../Components/Home';
+import Carousel from '../Components/Carousel';
 import Services from '../Components/Services';
 import Feature from '../Components/Feature';
 import Download from '../Components/Download';
@@ -13,7 +13,7 @@ export default function DefaultPage () {
   return (
     <div className="bg-bg_light dark:bg-bg_dark">
       <NavBar />
-      <Home />
+      <Carousel />
       <Services />
       <Video />
       <Feature />

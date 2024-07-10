@@ -20,13 +20,13 @@ export default function Download() {
           <div>
             <h1 className="text-4xl font-bold mb-5" data-aos="zoom-in-down">
               <span className="text-4xl text-text_bold_light dark:text-text_bold_dark">
-                {downloadText.heading.split(" ")[0]}{" "}
+                Download the official application of{" "}
               </span>
               <span className="font-bold text-3xl text-text_bold_light dark:text-text_bold_dark">
-                {downloadText.heading.split(" ")[1]}
+                Smart
               </span>
               <span className="font-bold text-3xl dark:text-text_primary_dark text-text_primary_light">
-                {downloadText.heading.split(" ")[2]}
+                Linx
               </span>
             </h1>
             <p className="text-lg mb-5 text-text_light dark:text-text_dark" data-aos="zoom-in-up">
