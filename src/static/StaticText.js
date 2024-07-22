@@ -2,7 +2,7 @@ export const downloadText = {
   heading: 'Download the official application of SmartLinx',
   description: 'Click here to download the official APK:',
   buttonText: 'Download APK',
-  fileLink: '/APKs/SmartLinx v1.2.2.apk',
+  fileLink: '/APKs/SmartLinx v1.2.3.apk',
 };
 
 export const errorMessageText = {
