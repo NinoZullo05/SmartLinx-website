@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import updateImage from "../images/update.png";
+import updateImage from "../images/update.webp";
 
 const PopupAlert = () => {
     const [visible, setVisible] = useState(true);

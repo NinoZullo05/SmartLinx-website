@@ -1,7 +1,8 @@
-import { useEffect } from "react";
-import DownloadImage from "../images/Download.png";
-import ParallaxTilt from "react-parallax-tilt";
+import React, { useEffect } from "react";
+import LazyImage from "./LazyImage";
 import AOS from "aos";
+import "aos/dist/aos.css";
+import downloadImage from "../images/Download.webp";
 import { downloadText } from "../static/StaticText";
 
 export default function Download() {
@@ -42,14 +43,14 @@ export default function Download() {
           </div>
         </div>
         <div className="md:w-1/2 md:pl-8 mt-5 mr-3 ml-3 flex justify-center items-center">
-          <ParallaxTilt>
-            <img
-              src={DownloadImage}
-              alt="Download"
-              className="max-w-[250px] md:max-w-[450px] mx-auto"
-              data-aos="zoom-in-left"
-            />
-          </ParallaxTilt>
+          <LazyImage
+            src={downloadImage}
+            alt="Download"
+            width="450"
+            height="300"
+            className="max-w-[250px] md:max-w-[450px] mx-auto"
+            data-aos="zoom-in-left"
+          />
         </div>
       </div>
     </div>

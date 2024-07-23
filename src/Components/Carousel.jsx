@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import onBoarding1 from "../images/test1.png";
-import onBoarding2 from "../images/test2.png";
-import onBoarding3 from "../images/test3.png";
+import onBoarding1 from "../images/test1.webp";
+import onBoarding2 from "../images/test2.webp";
+import onBoarding3 from "../images/test3.webp";
 import { carouselText } from "../static/StaticText";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
-
+import LazyImage from "./LazyImage";
 
 const images = [onBoarding2, onBoarding1, onBoarding3];
 
@@ -50,9 +50,11 @@ export default function Home() {
       </div>
       <div className={`w-full md:w-auto mx-auto text-center flex flex-col md:flex-row mt-20 transition-opacity duration-300 ${fade ? 'opacity-100' : 'opacity-0'}`}>
         <div className="md:w-1/2 md:pr-4 md:pl-8 ml-5 mr-3">
-          <img
+          <LazyImage
             src={images[currentImageIndex]}
             alt={`${currentImageIndex + 1}`}
+            width="450"
+            height="300"
             className="max-w-[450px] w-full h-auto mx-auto"
           />
         </div>

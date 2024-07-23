@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-scroll";
-import Image from "../images/Logo.png";
+import Image from "../images/Logo.webp";
 import { navbarText } from "../static/StaticText";
 
 const Navbar = () => {

@@ -59,9 +59,9 @@ export const featureText = {
   heading: 'Discover our main features',
   subheading: "Here's why you should choose our application",
   features: [
-    {imageSrc: 'Feature1.png', title: 'Multi-Platform Compatibility'},
-    {imageSrc: 'Feature2.png', title: 'Intuitive and User-Friendly Interface'},
-    {imageSrc: 'Feature3.png', title: 'Advanced Data Security'},
+    {imageSrc: 'Feature1.webp', title: 'Multi-Platform Compatibility'},
+    {imageSrc: 'Feature2.webp', title: 'Intuitive and User-Friendly Interface'},
+    {imageSrc: 'Feature3.webp', title: 'Advanced Data Security'},
   ],
 };
 
