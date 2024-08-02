@@ -5,7 +5,7 @@ import onBoarding3 from "../images/test3.webp";
 import { carouselText } from "../static/StaticText";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import LazyImage from "./LazyImage";
-
+import fetchAppVersion from '../scripts/fetchVersion';
 const images = [onBoarding2, onBoarding1, onBoarding3];
 
 export default function Home() {
@@ -31,6 +31,7 @@ export default function Home() {
   };
 
   useEffect(() => {
+    fetchAppVersion();
     const interval = setInterval(nextSlide, 8000);
     return () => clearInterval(interval);
   }, []);
