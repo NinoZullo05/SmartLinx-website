@@ -1,3 +1,4 @@
+/* 
 const fetchAppVersion = async () => {
   try {
     const response = await fetch ('/smartlinx/appVersion');
@@ -13,3 +14,4 @@ const fetchAppVersion = async () => {
 };
 
 export default fetchAppVersion;
+*/
