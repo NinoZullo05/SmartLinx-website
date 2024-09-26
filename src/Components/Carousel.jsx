@@ -12,7 +12,8 @@ import LazyImage from "./LazyImage";
  *
  * @component
  * @example
- * @returns <Carousel />
+ * @returns 
+<Carousel />
  *
  *
  * @returns {JSX.Element} The rendered carousel component.
