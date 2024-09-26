@@ -1,14 +1,14 @@
 import React from "react";
 
-import NavBar from "../Components/NavBar";
-import Carousel from "../Components/Carousel";
-import Services from "../Components/Services";
-import Feature from "../Components/Feature";
-import Download from "../Components/Download";
-import FAQ from "../Components/FAQ";
-import FAQGrid from "../Components/FAQGrid";
-import Footer from "../Components/Footer";
-import Video from "../Components/Video";
+import NavBar from "../components/NavBar";
+import Carousel from "../components/Carousel";
+import Services from "../components/Services";
+import Feature from "../components/Feature";
+import Download from "../components/Download";
+import FAQ from "../components/FAQ";
+import FAQGrid from "../components/FAQGrid";
+import Footer from "../components/Footer";
+import Video from "../components/Video";
 
 export default function DefaultPage() {
   return (
