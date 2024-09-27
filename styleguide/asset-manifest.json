@@ -1,9 +1,21 @@
 {
   "files": {
-    "main.js": "/build/bundle.f5c3dff7.js",
+    "main.js": "/build/bundle.c9650767.js",
+    "main.css": "/static/css/main.d3a65e4b.css",
+    "Download.webp": "/380109cbb3921d075612.webp",
+    "Logo.png": "/58dd4bdcf0f079e88b3a.png",
+    "Feature1.webp": "/80248243b0a92d6ca6e8.webp",
+    "Feature2.webp": "/24b6407cb0da5ca0575e.webp",
+    "Logo.webp": "/1621bb431b09df7cfa6c.webp",
+    "Feature3.webp": "/847a0b2076fdfa3db415.webp",
+    "test2.webp": "/bdfd5f273c29e8473b92.webp",
+    "update.webp": "/07fff963efb26b9db42f.webp",
+    "test1.webp": "/df39adc9cbafeac0b0c6.webp",
+    "test3.webp": "/041761428321ddc058ad.webp",
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "build/bundle.f5c3dff7.js"
+    "build/bundle.c9650767.js",
+    "static/css/main.d3a65e4b.css"
   ]
 }
