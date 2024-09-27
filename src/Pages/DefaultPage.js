@@ -2,7 +2,7 @@ import React from "react";
 
 import NavBar from "../components/NavBar";
 import Services from "../components/Services";
-import Carousel from "../Components/Carousel";
+import Carousel from "../components/Carousel";
 import Feature from "../components/Feature";
 import Download from "../components/Download";
 import FAQ from "../components/FAQ";
