@@ -25,4 +25,4 @@ const DefaultPage =() => {
     </div>
   );
 }
-export default DefaultPage;
+export default DefaultPage; 
