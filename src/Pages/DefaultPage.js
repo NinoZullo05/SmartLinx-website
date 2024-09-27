@@ -10,7 +10,7 @@ import FAQGrid from "../components/FAQGrid";
 import Footer from "../components/Footer";
 import Video from "../components/Video";
 
-export default function DefaultPage() {
+const DefaultPage =() => {
   return (
     <div className="bg-bg_light dark:bg-bg_dark">
       <NavBar />
@@ -25,3 +25,4 @@ export default function DefaultPage() {
     </div>
   );
 }
+export default DefaultPage;

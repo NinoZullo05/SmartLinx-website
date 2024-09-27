@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import Image from "../images/Logo.webp";
 import { navbarText } from "../static/StaticText";
 
-const Navbar = () => {
+const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState(null);
     const menuRef = useRef(null);
@@ -98,4 +98,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavBar;
