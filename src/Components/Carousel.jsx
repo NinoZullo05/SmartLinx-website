@@ -5,7 +5,7 @@ import onBoarding3 from "../images/test3.webp";
 import { carouselText } from "../static/StaticText";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import PropTypes from "prop-types";
-
+import LazyLoad from "react-lazyload";
 /**
  * A carousel component that cycles through images with descriptions.
  * 

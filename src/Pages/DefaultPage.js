@@ -1,7 +1,7 @@
 import React from "react";
 
 import NavBar from "../components/NavBar";
-import Services from "../omponents/Services";
+import Services from "../components/Services";
 import Carousel from "../Components/Carousel";
 import Feature from "../components/Feature";
 import Download from "../components/Download";
