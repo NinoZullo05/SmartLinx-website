@@ -4,11 +4,10 @@ import onBoarding2 from "../images/test2.webp";
 import onBoarding3 from "../images/test3.webp";
 import { carouselText } from "../static/StaticText";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
-import LazyImage from "./LazyImage";
 import PropTypes from "prop-types";
 
 /**
- * A carousel component that cycles through images with descriptions.s
+ * A carousel component that cycles through images with descriptions.
  * 
  * Includes navigation buttons for manual control and auto-slide functionality.
  * Images are lazy-loaded for performance optimization.
@@ -83,13 +82,17 @@ const Carousel = () => {
         }`}
       >
         <div className="md:w-1/2 md:pr-4 md:pl-8 ml-5 mr-3">
-          <LazyImage
-            src={images[currentImageIndex]}
-            alt={`Slide ${currentImageIndex + 1}`}
-            width="450"
-            height="300"
-            className="max-w-[450px] w-full h-auto mx-auto"
-          />
+          {/* LazyImage component integrated directly */}
+          <LazyLoad height={300} offset={100}>
+            <img
+              src={images[currentImageIndex]}
+              alt={`Slide ${currentImageIndex + 1}`}
+              width="450"
+              height="300"
+              loading="lazy"
+              className="max-w-[450px] w-full h-auto mx-auto"
+            />
+          </LazyLoad>
         </div>
         <div className="md:w-1/2 md:pl-8 mt-3 mr-3 ml-3">
           <h1 className="text-gray-900 dark:text-gray-100 md:text-5xl sm:text-5xl text-2xl font-bold md:py-4 mb-5 mt-5 ml-5 mr-5">
