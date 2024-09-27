@@ -1,4 +1,16 @@
+/**
+ * FAQGrid component displays a grid of frequently asked questions (FAQ) with icons and descriptions.
+ * It uses AOS for animation and dynamic icons mapped through `react-icons/fa`.
+ *
+ * @component
+ * @example
+ * return (
+ *   <FAQGrid />
+ * )
+ */
+
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { faqGridText } from "../static/StaticText";
@@ -10,9 +22,15 @@ const iconMap = {
   FaLock: FaLock,
   FaWrench: FaWrench,
   FaAndroid: FaAndroid,
-  FaUserAlt: FaUserAlt
+  FaUserAlt: FaUserAlt,
 };
 
+/**
+ * Initializes the FAQGrid component and sets up animations using AOS.
+ * Renders a grid of FAQs with dynamic icons based on the provided `faqGridText`.
+ *
+ * @returns {JSX.Element} The rendered FAQ grid.
+ */
 export default function FAQGrid() {
   useEffect(() => {
     AOS.init({ duration: 800 });
@@ -20,11 +38,15 @@ export default function FAQGrid() {
 
   return (
     <div className="md:max-w-full px-4 lg:px-16 xl:px-16 mt-5 mb-10 py-7 rounded-lg overflow-hidden">
-      <h2 className="text-2xl font-semibold text-text_FAQ_title_light dark:text-text_FAQ_title_dark flex justify-center mb-5" data-aos="zoom-out-up">
+      <h2
+        className="text-2xl font-semibold text-text_FAQ_title_light dark:text-text_FAQ_title_dark flex justify-center mb-5"
+        data-aos="zoom-out-up"
+      >
         {faqGridText.heading}
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
         {faqGridText.questions.map((question, index) => {
+          // Get the corresponding icon component from the iconMap
           const IconComponent = iconMap[question.icon];
           return (
             <div className="p-6 flex items-start" data-aos="fade-up" key={index}>
@@ -44,3 +66,11 @@ export default function FAQGrid() {
     </div>
   );
 }
+
+// PropTypes per il componente FAQGrid
+FAQGrid.propTypes = {
+  heading: PropTypes.string.isRequired, // The main heading of the FAQ grid.
+  questionTitle: PropTypes.string.isRequired, // The title of the question.
+  questionText: PropTypes.string.isRequired, // The text description of the question.
+  icon: PropTypes.oneOf(Object.keys(iconMap)).isRequired, // The icon name corresponding to the iconMap.
+};

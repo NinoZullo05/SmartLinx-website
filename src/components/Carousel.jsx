@@ -108,15 +108,14 @@ const Carousel = () => {
 };
 
 Carousel.propTypes = {
-  /** Array of image URLs or image components. */
-  images: PropTypes.arrayOf(PropTypes.string),
-  /** Descriptive text for each slide. */
-  carouselText: PropTypes.arrayOf(
-    PropTypes.shape({
-      heading: PropTypes.string,
-      description: PropTypes.string
-    })
-  )
+  /** Array of image URLs. */
+  images: PropTypes.arrayOf(PropTypes.string), // Array containing the URLs of the images.
+  
+  /** Heading for the carousel slide. */
+  heading: PropTypes.string, // Descriptive heading for each slide.
+  
+  /** Description for the carousel slide. */
+  description: PropTypes.string, // Descriptive text for each slide.
 };
 
 export default Carousel;

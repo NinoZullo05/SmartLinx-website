@@ -1,17 +1,33 @@
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-scroll";
 import { FaSearch } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { faqText } from "../static/StaticText";
+import { faqText } from "../static/StaticText"; // Assicurati di avere il percorso corretto per l'importazione
 
+/**
+ * FAQ component that displays a frequently asked questions section with a heading, subheading,
+ * description, and a search input. This component uses animations from AOS and smooth scrolling
+ * from `react-scroll`.
+ *
+ * @component
+ * @example
+ * return (
+ *   <FAQ />
+ * )
+ */
 export default function FAQ() {
   useEffect(() => {
     AOS.init({ duration: 800 });
   }, []);
 
   return (
-    <div className="bg-bg_FAQ_light dark:bg-bg_FAQ_dark mx-6 lg:mx-16 xl:mx-16 pt-5 mb-2 py-7 bg-opacity-20 rounded-lg text-left lg:px-6 xl:px-8 flex flex-col justify-start items-center gap-8 sm:mx-4" id="faq" data-aos="fade-up">
+    <div
+      className="bg-bg_FAQ_light dark:bg-bg_FAQ_dark mx-6 lg:mx-16 xl:mx-16 pt-5 mb-2 py-7 bg-opacity-20 rounded-lg text-left lg:px-6 xl:px-8 flex flex-col justify-start items-center gap-8 sm:mx-4"
+      id="faq"
+      data-aos="fade-up"
+    >
       <div className="h-auto w-full px-4 flex flex-col justify-start items-center gap-4">
         <div className="h-16 w-full flex flex-col justify-start items-center gap-3">
           <h1 className="text-text_bold_light dark:text-text_bold_dark text-xl font-semibold">
@@ -37,3 +53,29 @@ export default function FAQ() {
     </div>
   );
 }
+
+// PropTypes per il componente FAQ
+FAQ.propTypes = {
+  /**
+   * The text object containing the heading, subheading, description, and search placeholder for the FAQ.
+   */
+    /**
+     * The main heading of the FAQ section.
+     */
+    heading: PropTypes.string.isRequired,
+
+    /**
+     * The subheading of the FAQ section.
+     */
+    subheading: PropTypes.string.isRequired,
+
+    /**
+     * A description for the FAQ section.
+     */
+    description: PropTypes.string.isRequired,
+
+    /**
+     * Placeholder text for the search input.
+     */
+    searchPlaceholder: PropTypes.string.isRequired,
+};
