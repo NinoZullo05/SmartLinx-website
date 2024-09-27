@@ -1,6 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { errorMessageText } from "../static/StaticText";
 
+/**
+ * ErrorMessage component that displays an error message with a heading, description, and a link.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {string} props.heading - The heading text for the error message.
+ * @param {string} props.description - The description text for the error message.
+ * @param {string} props.buttonText - The text to display on the error message button.
+ * @param {string} props.buttonLink - The link to navigate when the button is clicked.
+ * @example
+ * <ErrorMessage heading="Error" description="Something went wrong." buttonText="Go Home" buttonLink="/" />
+ */
 export default function ErrorMessage() {
     return (
         <div className="px-6 min-h-screen flex flex-grow items-center justify-center bg-bg_light dark:bg-bg_dark">
@@ -16,3 +29,14 @@ export default function ErrorMessage() {
         </div>
     );
 }
+
+ErrorMessage.propTypes = {
+    /** The heading text for the error message */
+    heading: PropTypes.string.isRequired,
+    /** The description text for the error message */
+    description: PropTypes.string.isRequired,
+    /** The text to display on the error message button */
+    buttonText: PropTypes.string.isRequired,
+    /** The link to navigate when the button is clicked */
+    buttonLink: PropTypes.string.isRequired,
+};

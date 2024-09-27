@@ -1,11 +1,25 @@
 import React, { useEffect } from "react";
-import LazyImage from "./LazyImage";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import LazyImage from './LazyImage';
 import downloadImage from "../images/Download.webp";
 import { downloadText } from "../static/StaticText";
 
+/**
+ * Download component that displays an application download section.
+ *
+ * This component utilizes the AOS (Animate on Scroll) library for scroll animations 
+ * and a lazy-loaded image to enhance performance. It provides a button that 
+ * redirects users to download the application.
+ *
+ * @component
+ * @example
+ * <Download />
+ */
 export default function Download() {
+  /**
+   * Handles the download action by redirecting to the specified file link.
+   */
   const handleDownload = () => {
     window.location.href = downloadText.fileLink;
   };

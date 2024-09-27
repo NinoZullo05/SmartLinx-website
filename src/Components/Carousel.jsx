@@ -5,18 +5,18 @@ import onBoarding3 from "../images/test3.webp";
 import { carouselText } from "../static/StaticText";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import LazyImage from "./LazyImage";
+import PropTypes from "prop-types";
 
 /**
- * Carousel component for displaying a series of images with associated descriptions.
- * The component allows users to navigate through the images using next and previous buttons.
- *
+ * A carousel component that cycles through images with descriptions.s
+ * 
+ * Includes navigation buttons for manual control and auto-slide functionality.
+ * Images are lazy-loaded for performance optimization.
+ * 
  * @component
  * @example
- * @returns 
-<Carousel />
- *
- *
- * @returns {JSX.Element} The rendered carousel component.
+ * return (     < Carousel />
+ * )
  */
 const Carousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -24,37 +24,32 @@ const Carousel = () => {
   const images = [onBoarding2, onBoarding1, onBoarding3];
 
   /**
-   * Advances to the next slide in the carousel.
-   * The current image index is updated after a fade transition.
+   * Changes the slide in the carousel based on step value.
    * 
-   * @function
-   * @returns {void}
+   * @param {number} step - The value to increment (or decrement) the current image index.
    */
-  const nextSlide = useCallback(() => {
-    setFade(false);
-    setTimeout(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-      setFade(true);
-    }, 300);
-  }, [images.length]);
+  const changeSlide = useCallback(
+    (step) => {
+      setFade(false);
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + step + images.length) % images.length);
+        setFade(true);
+      }, 300);
+    },
+    [images.length]
+  );
 
   /**
-   * Goes back to the previous slide in the carousel.
-   * The current image index is updated after a fade transition.
-   * 
-   * @function
-   * @returns {void}
+   * Advances to the next slide.
    */
-  const prevSlide = useCallback(() => {
-    setFade(false);
-    setTimeout(() => {
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex - 1 + images.length) % images.length
-      );
-      setFade(true);
-    }, 300);
-  }, [images.length]);
+  const nextSlide = useCallback(() => changeSlide(1), [changeSlide]);
 
+  /**
+   * Goes back to the previous slide.
+   */
+  const prevSlide = useCallback(() => changeSlide(-1), [changeSlide]);
+
+  // Auto-slide functionality every 8 seconds
   useEffect(() => {
     const interval = setInterval(nextSlide, 8000);
     return () => clearInterval(interval);
@@ -65,22 +60,23 @@ const Carousel = () => {
       className="pb-36 pt-20 flex justify-center items-center container mx-auto overflow-x-hidden relative custom-scrollbar"
       id="home"
     >
-      <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
-        <button
-          onClick={prevSlide}
-          className="text-3xl font-bold text-gray-700 dark:text-gray-300"
-        >
-          <AiOutlineLeft />
-        </button>
-      </div>
-      <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
-        <button
-          onClick={nextSlide}
-          className="text-3xl font-bold text-gray-700 dark:text-gray-300"
-        >
-          <AiOutlineRight />
-        </button>
-      </div>
+      {/* Previous Slide Button */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 text-3xl font-bold text-gray-700 dark:text-gray-300"
+      >
+        <AiOutlineLeft />
+      </button>
+
+      {/* Next Slide Button */}
+      <button
+        onClick={nextSlide}
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 text-3xl font-bold text-gray-700 dark:text-gray-300"
+      >
+        <AiOutlineRight />
+      </button>
+
+      {/* Image and Text */}
       <div
         className={`w-full md:w-auto mx-auto text-center flex flex-col md:flex-row mt-20 transition-opacity duration-300 ${
           fade ? "opacity-100" : "opacity-0"
@@ -89,7 +85,7 @@ const Carousel = () => {
         <div className="md:w-1/2 md:pr-4 md:pl-8 ml-5 mr-3">
           <LazyImage
             src={images[currentImageIndex]}
-            alt={`${currentImageIndex + 1}`}
+            alt={`Slide ${currentImageIndex + 1}`}
             width="450"
             height="300"
             className="max-w-[450px] w-full h-auto mx-auto"
@@ -106,6 +102,18 @@ const Carousel = () => {
       </div>
     </div>
   );
+};
+
+Carousel.propTypes = {
+  /** Array of image URLs or image components. */
+  images: PropTypes.arrayOf(PropTypes.string),
+  /** Descriptive text for each slide. */
+  carouselText: PropTypes.arrayOf(
+    PropTypes.shape({
+      heading: PropTypes.string,
+      description: PropTypes.string
+    })
+  )
 };
 
 export default Carousel;
