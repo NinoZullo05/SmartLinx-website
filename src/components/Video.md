@@ -1,7 +1,7 @@
-## Usage
+# Usage
 
 ```jsx
 import '../index.css';
 
-<ErrorMessage />
+<Video />
 ```

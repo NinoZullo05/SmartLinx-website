@@ -4,6 +4,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { serviceText } from "../static/StaticText";
 
+/**
+ * 
+ * This component displays a section of services offered by the application.
+ * It includes a heading, subheading, and a list of services, each with an icon,
+ * title, and description. The section is animated using the AOS library for a smooth appearance.
+ * 
+ */
+
 const iconMap = {
   AiOutlineDownload: AiOutlineDownload,
   AiOutlineSetting: AiOutlineSetting,
@@ -52,5 +60,7 @@ const Services = () => {
     </div>
   );
 };
+
+Services.propTypes = {};
 
 export default Services;

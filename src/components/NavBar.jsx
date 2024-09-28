@@ -1,11 +1,23 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-scroll";
+import PropTypes from "prop-types";
 import Image from "../images/Logo.webp";
 import { navbarText } from "../static/StaticText";
 
+/**
+ * 
+ * This component renders a navigation bar that includes the SmartLinx logo,
+ * a toggle button for mobile menu, and links to different sections of the page.
+ * It manages the state for the open/closed status of the menu and highlights
+ * the currently active section as the user scrolls through the page.
+ * 
+ */
+
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const [activeSection, setActiveSection] = useState(null);
+
     const menuRef = useRef(null);
 
     const toggleMenu = () => {
@@ -19,17 +31,17 @@ const NavBar = () => {
     useEffect(() => {
         if (isMenuOpen) {
             const menuHeight = menuRef.current.offsetHeight;
-            menuRef.current.style.marginBottom = `${menuHeight}px /2`;
+            menuRef.current.style.marginBottom = `${menuHeight}px / 2`; 
         } else {
-            menuRef.current.style.marginBottom = "0";
+            menuRef.current.style.marginBottom = "0"; 
         }
     }, [isMenuOpen]);
 
     const capitalizeFirstLetter = (string) => {
         if (string === "faq") {
-            return "FAQs";
+            return "FAQs"; 
         }
-        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase(); 
     };
 
     return (
@@ -86,8 +98,9 @@ const NavBar = () => {
                                     className={`block py-2 px-3 text-gray-700 dark:text-gray-300 rounded md:p-0 md:text-black cursor-pointer ${activeSection === section ? "bg-[#9E5CF6]" : ""
                                         }`}
                                     onSetActive={handleSetActive}
-                                    onClick={toggleMenu}>
-                                    {capitalizeFirstLetter(section)}
+                                    onClick={toggleMenu}
+                                >
+                                    {capitalizeFirstLetter(section)} 
                                 </Link>
                             </li>
                         ))}
@@ -96,6 +109,10 @@ const NavBar = () => {
             </div>
         </nav>
     );
+};
+
+NavBar.propTypes = {
+    navbarText: PropTypes.arrayOf(PropTypes.string).isRequired, 
 };
 
 export default NavBar;

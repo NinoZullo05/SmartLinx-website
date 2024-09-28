@@ -3,7 +3,16 @@ import { Link } from "react-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { featureText } from "../static/StaticText";
+import PropTypes from "prop-types";
 
+/**
+ * Feature component displays a section of features with images and titles.
+ * It uses AOS for animations and react-scroll for smooth scrolling.
+ * 
+ * @component
+ * @example
+
+ */
 export default function Feature() {
   useEffect(() => {
     AOS.init({ duration: 800 });
@@ -36,3 +45,27 @@ export default function Feature() {
     </div>
   );
 }
+
+/**
+ * PropTypes definitions for the Feature component.
+ * 
+ * @typedef {Object} FeatureProps
+ * @property {string} heading - Heading text displayed at the top of the feature section.
+ * @property {string} subheading - Subheading text displayed below the heading.
+ * @property {string} imageSrc - Image source for each feature, expected to be a string (file path).
+ * @property {string} title - Title for each feature card.
+ */
+
+Feature.propTypes = {
+  /** Heading text displayed at the top of the feature section */
+  heading: PropTypes.string.isRequired,
+
+  /** Subheading text displayed below the heading */
+  subheading: PropTypes.string.isRequired,
+
+  /** Image source for each feature, expected to be a string (file path) */
+  imageSrc: PropTypes.string.isRequired,
+
+  /** Title for each feature card */
+  title: PropTypes.string.isRequired,
+};

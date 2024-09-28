@@ -2,6 +2,14 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import updateImage from "../images/update.webp";
 
+/**
+ * 
+ * This component displays a popup alert to inform users about an available update for the app.
+ * The alert is visible for 10 seconds and can also be dismissed manually by the user.
+ * It includes an image, a title, a description, and a button to scroll to the download section.
+ * 
+ */
+
 const PopupAlert = () => {
     const [visible, setVisible] = useState(true);
 
@@ -10,14 +18,14 @@ const PopupAlert = () => {
             setVisible(false);
         }, 10000);
 
-        return () => clearTimeout(timer);
+        return () => clearTimeout(timer); 
     }, []);
 
     if (!visible) return null;
 
     const handleUpdateClick = () => {
         document.getElementById('download').scrollIntoView({ behavior: 'smooth' });
-        setVisible(false);
+        setVisible(false); 
     };
 
     return (
@@ -45,5 +53,7 @@ const PopupAlert = () => {
         </div>
     );
 };
+
+PopupAlert.propTypes = {};
 
 export default PopupAlert;

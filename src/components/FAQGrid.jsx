@@ -67,7 +67,6 @@ export default function FAQGrid() {
   );
 }
 
-// PropTypes per il componente FAQGrid
 FAQGrid.propTypes = {
   heading: PropTypes.string.isRequired, // The main heading of the FAQ grid.
   questionTitle: PropTypes.string.isRequired, // The title of the question.

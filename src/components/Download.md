@@ -1,6 +1,7 @@
 ## Usage
 
 ```jsx
-import { downloadText } from "../static/StaticText";
+import "../index.css";
 
-<Download />
+<Download />;
+```

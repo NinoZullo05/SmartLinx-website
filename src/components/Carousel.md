@@ -1,5 +1,7 @@
 ## Usage
 
-
 ```jsx
-<Carousel />
+import "../index.css";
+
+<Carousel />;
+```

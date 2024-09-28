@@ -1,6 +1,13 @@
 const path = require('path');
 
+const { createWebpackDevConfig, createWebpackProdConfig } = require("@craco/craco");
+
+const cracoConfig = require("./craco.config.js");
+const webpackConfig = process.env.NODE_ENV === 'production' ? createWebpackProdConfig(cracoConfig) : createWebpackDevConfig(cracoConfig);
+
 module.exports = {
+  webpackConfig,
+
   components: 'src/components/**/*.{js,jsx,ts,tsx}',
   webpackConfig: {
     module: {
@@ -51,6 +58,7 @@ module.exports = {
     },
   },
   styles: {
+  
     StyleGuide: {
       '@global body': {
         fontFamily: '"SF Pro Display", Helvetica, Arial, sans-serif',
@@ -131,6 +139,6 @@ module.exports = {
     },
   },
   require: [
-    path.join(__dirname, 'src/styles/tailwind.css'),
+    path.join(__dirname, './src/index.css'),
   ],
 };

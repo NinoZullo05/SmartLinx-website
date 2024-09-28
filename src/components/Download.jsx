@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import LazyImage from './LazyImage';
+import LazyImage from "./LazyImage";
 import downloadImage from "../images/Download.webp";
 import { downloadText } from "../static/StaticText";
+import PropTypes from "prop-types";
 
 /**
  * Download component that displays an application download section.
  *
- * This component utilizes the AOS (Animate on Scroll) library for scroll animations 
- * and a lazy-loaded image to enhance performance. It provides a button that 
+ * This component utilizes the AOS (Animate on Scroll) library for scroll animations
+ * and a lazy-loaded image to enhance performance. It provides a button that
  * redirects users to download the application.
  *
  * @component
@@ -29,7 +30,10 @@ export default function Download() {
   }, []);
 
   return (
-    <div className="mb-32 mt-10 flex justify-center items-center bg-inherit" id="download">
+    <div
+      className="mb-32 mt-10 flex justify-center items-center bg-inherit"
+      id="download"
+    >
       <div className="w-auto mx-auto text-center flex flex-col md:flex-row mt-20">
         <div className="md:w-1/2 md:pr-4 md:pl-8 ml-3 mr-3 flex justify-center items-center">
           <div>
@@ -44,7 +48,10 @@ export default function Download() {
                 Linx
               </span>
             </h1>
-            <p className="text-lg mb-5 text-text_light dark:text-text_dark" data-aos="zoom-in-up">
+            <p
+              className="text-lg mb-5 text-text_light dark:text-text_dark"
+              data-aos="zoom-in-up"
+            >
               {downloadText.description}
             </p>
             <button
@@ -70,3 +77,18 @@ export default function Download() {
     </div>
   );
 }
+
+// PropTypes per il componente Download
+Download.propTypes = {
+  /** URL or path for the download image. */
+  downloadImage: PropTypes.string.isRequired, // The image for the download section.
+
+  /** Description text for the download section. */
+  description: PropTypes.string.isRequired, // The descriptive text displayed above the button.
+
+  /** URL for the file to be downloaded. */
+  fileLink: PropTypes.string.isRequired, // The link to the downloadable file.
+
+  /** Text for the download button. */
+  buttonText: PropTypes.string.isRequired, // The text displayed on the download button.
+};

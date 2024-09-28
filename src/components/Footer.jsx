@@ -2,7 +2,17 @@ import React, { useState } from "react";
 import { SlArrowRight, SlArrowDown } from "react-icons/sl";
 import { FaRegCopyright, FaGithub } from "react-icons/fa";
 import { footerText } from "../static/StaticText";
+import PropTypes from "prop-types";
 
+/**
+ * Footer component that displays a site footer with contact information, useful links,
+ * and information about the team members. Includes toggleable details for each team member 
+ * and icons for GitHub and copyright.
+ *
+ * @component
+ * @example
+
+ */
 export default function Footer() {
     const [showDetails, setShowDetails] = useState({
         Anes: false,
@@ -11,6 +21,11 @@ export default function Footer() {
         Nino: false,
     });
 
+    /**
+     * Toggles the visibility of the details for a specific user.
+     * 
+     * @param {string} name - The name of the user whose details are toggled.
+     */
     const toggleDetails = (name) => {
         setShowDetails((prevState) => ({
             ...prevState,
@@ -18,6 +33,11 @@ export default function Footer() {
         }));
     };
 
+    /**
+     * Renders the list of users with their toggleable details.
+     *
+     * @returns {JSX.Element[]} A list of user details elements.
+     */
     const renderUsers = () => {
         return footerText.users.map((user) => (
             <div className="mb-4" key={user.name}>
@@ -119,3 +139,45 @@ export default function Footer() {
         </footer>
     );
 }
+
+/**
+ * PropTypes definitions for the Footer component.
+ *
+ * @typedef {Object} FooterProps
+ * @property {string} aboutUs - Information about the organization.
+ * @property {string} contact - Contact information text.
+ * @property {string} address - Physical address of the organization.
+ * @property {string} email - Contact email.
+ * @property {Array<Object>} users - List of users with their names and emails.
+ * @property {Array<Object>} usefulLinks - List of useful links with text and URLs.
+ */
+
+Footer.propTypes = {
+  /** Information about the organization */
+  aboutUs: PropTypes.string.isRequired,
+
+  /** Contact information text */
+  contact: PropTypes.string.isRequired,
+
+  /** Physical address of the organization */
+  address: PropTypes.string.isRequired,
+
+  /** Contact email */
+  email: PropTypes.string.isRequired,
+
+  /** List of users with their names and emails */
+  users: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+
+  /** List of useful links with text and URLs */
+  usefulLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

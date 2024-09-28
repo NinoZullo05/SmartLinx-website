@@ -13,9 +13,6 @@ import { faqText } from "../static/StaticText"; // Assicurati di avere il percor
  *
  * @component
  * @example
- * return (
- *   <FAQ />
- * )
  */
 export default function FAQ() {
   useEffect(() => {

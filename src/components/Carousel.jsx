@@ -8,14 +8,13 @@ import PropTypes from "prop-types";
 import LazyLoad from "react-lazyload";
 /**
  * A carousel component that cycles through images with descriptions.
- * 
+ *
  * Includes navigation buttons for manual control and auto-slide functionality.
  * Images are lazy-loaded for performance optimization.
- * 
+ *
  * @component
  * @example
- * return (     < Carousel />
- * )
+
  */
 const Carousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -24,14 +23,16 @@ const Carousel = () => {
 
   /**
    * Changes the slide in the carousel based on step value.
-   * 
+   *
    * @param {number} step - The value to increment (or decrement) the current image index.
    */
   const changeSlide = useCallback(
     (step) => {
       setFade(false);
       setTimeout(() => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + step + images.length) % images.length);
+        setCurrentImageIndex(
+          (prevIndex) => (prevIndex + step + images.length) % images.length
+        );
         setFade(true);
       }, 300);
     },
@@ -110,10 +111,10 @@ const Carousel = () => {
 Carousel.propTypes = {
   /** Array of image URLs. */
   images: PropTypes.arrayOf(PropTypes.string), // Array containing the URLs of the images.
-  
+
   /** Heading for the carousel slide. */
   heading: PropTypes.string, // Descriptive heading for each slide.
-  
+
   /** Description for the carousel slide. */
   description: PropTypes.string, // Descriptive text for each slide.
 };

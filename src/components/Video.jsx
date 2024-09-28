@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
+/**
+ * 
+ * This component displays a video of the application. It includes a title 
+ * and a loading state that shows a placeholder until the video is ready to be played.
+ * If the URL hash is set to '#video', it will automatically scroll to this section.
+ * 
+ */
+
 export default function Video() {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
         if (window.location.hash === '#video') {
@@ -38,3 +46,6 @@ export default function Video() {
         </div>
     );
 }
+
+Video.propTypes = {};
+
