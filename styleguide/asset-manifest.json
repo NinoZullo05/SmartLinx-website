@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/build/bundle.c9650767.js",
-    "main.css": "/static/css/main.d3a65e4b.css",
+    "main.js": "/build/bundle.da251529.js",
+    "main.css": "/static/css/main.2de3a4e1.css",
     "Download.webp": "/380109cbb3921d075612.webp",
     "Logo.png": "/58dd4bdcf0f079e88b3a.png",
     "Feature1.webp": "/80248243b0a92d6ca6e8.webp",
@@ -15,7 +15,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "build/bundle.c9650767.js",
-    "static/css/main.d3a65e4b.css"
+    "build/bundle.da251529.js",
+    "static/css/main.2de3a4e1.css"
   ]
 }
