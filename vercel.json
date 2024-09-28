@@ -8,6 +8,14 @@
     ],
     "routes": [
         {
+            "src": "/static/(.*)",
+            "dest": "/styleguide/static/$1"
+        },
+        {
+            "src": "/build/(.*)",
+            "dest": "/styleguide/build/$1"
+        },
+        {
             "src": "/(.*)",
             "dest": "/styleguide/$1"
         }
