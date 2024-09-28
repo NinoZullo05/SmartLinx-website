@@ -9,7 +9,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/styleguide/index.html"
+            "dest": "/styleguide/$1"
         }
     ]
 }
