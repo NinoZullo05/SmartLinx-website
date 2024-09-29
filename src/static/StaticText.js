@@ -69,14 +69,14 @@ export const footerText = {
   aboutUs: 'All rights reserved. Developed as a high school project by students of class 5IC Galileo Galilei Crema Year 2023/2024. Learn more about us and our technological innovation project for your smart home.',
   contact: 'Stay connected with us on social networks:',
   users: [
-    {name: 'Anes Barbati', email: 'anes.barbati@smartlinx.it'},
-    {name: 'Edoardo Ingiardi', email: 'edoardo.ingiardi@smartlinx.it'},
-    {name: 'Francesco Roveda', email: 'francesco.roveda@smartlinx.it'},
-    {name: 'Nino Zullo', email: 'nino.zullo@smartlinx.it'},
+    {name: 'Anes Barbati', email: 'barbatianes@gmail.com'},
+    {name: 'Edoardo Ingiardi', email: 'edoardo.ingiardi@gmail.com'},
+    {name: 'Francesco Roveda', email: 'francescoroveda481@gmail.com'},
+    {name: 'Nino Zullo', email: 'nino.zullo05dev@gmail.com'},
   ],
   usefulLinks: [
     {text: 'Source Code', link: 'https://github.com/SmartLinx-Project'},
-    {text: 'Project Information', link: 'Documentation/ProjectInfo.pdf'},
+    {text: 'Documentation', link: 'https://docs.smartlinx.it'},
     {text: 'API Status', link: 'https://stats.uptimerobot.com/gvx0JgSJRC'},
     {
       text: 'API Documentation',
