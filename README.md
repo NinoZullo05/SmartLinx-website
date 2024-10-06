@@ -29,7 +29,7 @@
 
 ## 📖 Overview
 
-The **SmartLinx Website** is a responsive web application designed to provide users with comprehensive information on supported smart devices and an easy way to download the APK for managing these devices via MQTT. The application is built using **React** and **Tailwind CSS**, ensuring a smooth, intuitive user experience.
+The **SmartLinx Website** is a responsive web application designed to provide users with comprehensive information on supported smart devices and an easy way to download the APK for managing these devices via MQTT. The application is built using **React** and **Tailwind CSS**, ensuring a smooth and intuitive user experience.
 
 ## ✨ Key Features
 
