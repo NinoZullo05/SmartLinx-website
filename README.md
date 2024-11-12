@@ -16,7 +16,7 @@
     <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> 
   </a>
 
-🌐 **Live Website**: [www.smartlinx.it](https://www.smartlinx.it)  
+🌐 **Live Website**: [smartlinx.it](https://smartlinx.it)  
 📄 **Documentation**: [docs.smartlinx.it](https://docs.smartlinx.it)
 
 ## 📚 Table of Contents
